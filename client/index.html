@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>cool io game!</title>
+    <meta name="msapplication-TileColor" content="#181818">
+    <meta name="theme-color" content="#181818">
+
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sat/0.9.0/SAT.min.js"
+        integrity="sha512-I/Whsg25W/NpxpNL5dXAySa7JMz/r0ibfrqaTUTT97m2ggJAYbiioXaqL5hfoXmZ1CsvXaPyLKrwe3sSem20/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="titleIsland">
+            <div class="title">
+                Example IO Game
+            </div>
+            <form class="playForm">
+                <input type="text" class="nameInput" autocomplete="off" maxlength="32" placeholder="" autofocus></input>
+            </form>
+        </div>
+    </div>
+
+    <canvas id="canvas" style="z-index: -1"></canvas>
+
+    <div class="gui hidden">
+        <div class="chatDiv hidden">
+            <div class="chat-over"></div>
+            <input class="chat" type="text" autocomplete="off" spellcheck="false" maxlength="256">
+        </div>
+        <div class="chat-div">
+            <!-- <div class="chat-message"><span class="rainbow">[SƎRVƎR]</span>: Welcome!</div> -->
+        </div>
+        <div class="leaderboard-div"></div>
+    </div>
+</body>
+
+</html>

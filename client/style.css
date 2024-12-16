@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(5,5,5);
+    font-size: 16px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.menu {
+    background-color: rgb(5,5,5);
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nameInput {
+    outline: none;
+    margin: 5px;
+    height: 20px;
+    width: 200px;
+
+    box-shadow: 0px 0px 10px 2px white;
+    outline: none;
+    border: none;
+    color: white;
+    background: rgba(0,0,0,1);
+    padding: 5px;
+    font-size: 1.25rem;
+    position: relative;
+    width: 250px;
+    height: 30px;
+    top: 75px;
+}
+
+.playForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    position: relative;
+    top: -50px;
+    font-size: 3.5rem;
+    text-shadow: 0px 0px 15px white;
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+canvas, .gui {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.text-layer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1600px;
+	height: 900px;
+	filter: none !important;
+	background: transparent;
+	overflow: hidden;
+}
+
+.chatDiv {
+    z-index: 100;
+}
+
+.chat {
+    position: absolute;
+    left: 0px;
+    top: 250px;
+    width: 374px;
+    height: 30px;
+    transform-origin: center center;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    padding: 5px;
+    caret-color: white;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    font-family: 'Inter-Thick', Inter;
+}
+
+.chat-message {
+    color: white;
+    font-size: 1.05rem;
+    background: transparent;
+    padding: 1px;
+
+    overflow-wrap: break-word;
+    width: 100%;
+}
+.system-message {
+    color: #c4c4c4;
+    font-size: 1rem;
+    background: transparent;
+    padding: 1px;
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.fade-out {
+    animation: fade-out 0.3s linear;
+}
+
+.fade-in {
+    animation: fade-in 0.3s linear;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.chat::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.leaderboard-div {
+    position: fixed;
+    left: calc(100% - 299px);
+    transition: left 0.2s linear, opacity 0.2s linear;
+    opacity: 1;
+    top: -1px;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    user-select: none;
+    font-family: 'Inter-Thick', Inter;
+}
+
+.hide {
+    left: 1600px !important;
+    opacity: 0;
+}
+
+.leaderboard-div::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.leaderboard-div::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.rainbow {
+    animation: colorRotate 4s linear 0s infinite;
+}
+
+@keyframes colorRotate {
+    0% {
+        color: hsl(180, 100%, 50%);
+    }
+    50% {
+        color: hsl(216, 100%, 50%);
+    }
+    100% {
+        color: hsl(180, 100%, 50%);
+    }
+}
+
+.chat-div::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.chat-div::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.chat-div {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 375px;
+    height: 251px;
+    filter: none !important;
+    background: rgba(141, 141, 141, 0.205);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 2px;
+    overflow-x: hidden;
+    /* 	word-break: break-all; */
+    font-family: Inter-Thick, Inter;
+    transition: all 0.1s linear, padding 0.1s linear;
+}
+
+.lb-group {
+    background: transparent;
+    padding: 5px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    width: 300px;
+}
+
+
+.lb-name {
+    font-size: 1rem;
+}
+
+.lb-players {
+    margin: 5px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lb-players div {
+    margin: 1.5px;
+	cursor: pointer;
+	background: transparent;
+	padding: 0px;
+	transition: all 0.1s linear, padding 0.1s linear;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.lb-players div:hover {
+	background: rgba(255, 255, 255, 0.3);
+	padding: 6px;
+}
+
+.hideLB {
+    left: 100% !important;
+    opacity: 0;
+}
+
+.hideChat {
+    left: -175px !important;
+    opacity: 0; 
+}
